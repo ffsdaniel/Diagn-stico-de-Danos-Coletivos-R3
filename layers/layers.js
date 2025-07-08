@@ -1,0 +1,100 @@
+ol.proj.proj4.register(proj4);
+//ol.proj.get("EPSG:31983").setExtent([492021.065255, 7793708.695285, 615883.105010, 7882438.230613]);
+var wms_layers = [];
+
+var format_MUNICIPIOS_R3_0 = new ol.format.GeoJSON();
+var features_MUNICIPIOS_R3_0 = format_MUNICIPIOS_R3_0.readFeatures(json_MUNICIPIOS_R3_0, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:31983'});
+var jsonSource_MUNICIPIOS_R3_0 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_MUNICIPIOS_R3_0.addFeatures(features_MUNICIPIOS_R3_0);
+var lyr_MUNICIPIOS_R3_0 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_MUNICIPIOS_R3_0, 
+                style: style_MUNICIPIOS_R3_0,
+                popuplayertitle: 'MUNICIPIOS_R3',
+                interactive: true,
+                title: '<img src="styles/legend/MUNICIPIOS_R3_0.png" /> MUNICIPIOS_R3'
+            });
+var format_danos_comunidades_poligonos_1 = new ol.format.GeoJSON();
+var features_danos_comunidades_poligonos_1 = format_danos_comunidades_poligonos_1.readFeatures(json_danos_comunidades_poligonos_1, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:31983'});
+var jsonSource_danos_comunidades_poligonos_1 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_danos_comunidades_poligonos_1.addFeatures(features_danos_comunidades_poligonos_1);
+var lyr_danos_comunidades_poligonos_1 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_danos_comunidades_poligonos_1, 
+                style: style_danos_comunidades_poligonos_1,
+                popuplayertitle: 'danos_comunidades_poligonos',
+                interactive: true,
+                title: '<img src="styles/legend/danos_comunidades_poligonos_1.png" /> danos_comunidades_poligonos'
+            });
+var format_RIO_PARAOPEBA_R3_2 = new ol.format.GeoJSON();
+var features_RIO_PARAOPEBA_R3_2 = format_RIO_PARAOPEBA_R3_2.readFeatures(json_RIO_PARAOPEBA_R3_2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:31983'});
+var jsonSource_RIO_PARAOPEBA_R3_2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_RIO_PARAOPEBA_R3_2.addFeatures(features_RIO_PARAOPEBA_R3_2);
+var lyr_RIO_PARAOPEBA_R3_2 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_RIO_PARAOPEBA_R3_2, 
+                style: style_RIO_PARAOPEBA_R3_2,
+                popuplayertitle: 'RIO_PARAOPEBA_R3',
+                interactive: false,
+                title: '<img src="styles/legend/RIO_PARAOPEBA_R3_2.png" /> RIO_PARAOPEBA_R3'
+            });
+var format_pontos_comunidades_3 = new ol.format.GeoJSON();
+var features_pontos_comunidades_3 = format_pontos_comunidades_3.readFeatures(json_pontos_comunidades_3, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:31983'});
+var jsonSource_pontos_comunidades_3 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_pontos_comunidades_3.addFeatures(features_pontos_comunidades_3);
+var lyr_pontos_comunidades_3 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_pontos_comunidades_3, 
+                style: style_pontos_comunidades_3,
+                popuplayertitle: 'pontos_comunidades',
+                interactive: false,
+                title: '<img src="styles/legend/pontos_comunidades_3.png" /> pontos_comunidades'
+            });
+var format_danos_comunidades_somente_ponto_4 = new ol.format.GeoJSON();
+var features_danos_comunidades_somente_ponto_4 = format_danos_comunidades_somente_ponto_4.readFeatures(json_danos_comunidades_somente_ponto_4, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:31983'});
+var jsonSource_danos_comunidades_somente_ponto_4 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_danos_comunidades_somente_ponto_4.addFeatures(features_danos_comunidades_somente_ponto_4);
+var lyr_danos_comunidades_somente_ponto_4 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_danos_comunidades_somente_ponto_4, 
+                style: style_danos_comunidades_somente_ponto_4,
+                popuplayertitle: 'danos_comunidades_somente_ponto',
+                interactive: true,
+                title: '<img src="styles/legend/danos_comunidades_somente_ponto_4.png" /> danos_comunidades_somente_ponto'
+            });
+
+lyr_MUNICIPIOS_R3_0.setVisible(true);lyr_danos_comunidades_poligonos_1.setVisible(true);lyr_RIO_PARAOPEBA_R3_2.setVisible(true);lyr_pontos_comunidades_3.setVisible(true);lyr_danos_comunidades_somente_ponto_4.setVisible(true);
+var layersList = [lyr_MUNICIPIOS_R3_0,lyr_danos_comunidades_poligonos_1,lyr_RIO_PARAOPEBA_R3_2,lyr_pontos_comunidades_3,lyr_danos_comunidades_somente_ponto_4];
+lyr_MUNICIPIOS_R3_0.set('fieldAliases', {'CD_MUN': 'CD_MUN', 'NM_MUN': 'NM_MUN', 'CD_RGI': 'CD_RGI', 'NM_RGI': 'NM_RGI', 'CD_RGINT': 'CD_RGINT', 'NM_RGINT': 'NM_RGINT', 'CD_UF': 'CD_UF', 'NM_UF': 'NM_UF', 'SIGLA_UF': 'SIGLA_UF', 'CD_REGIA': 'CD_REGIA', 'NM_REGIA': 'NM_REGIA', 'SIGLA_RG': 'SIGLA_RG', 'CD_CONCU': 'CD_CONCU', 'NM_CONCU': 'NM_CONCU', 'AREA_KM2': 'AREA_KM2', });
+lyr_danos_comunidades_poligonos_1.set('fieldAliases', {'Nome_da_Co': 'Nome_da_Co', 'REGIÃO': 'REGIÃO', 'Município': 'Município', 'Comunidade': 'Comunidade', 'LATITUDE_Y': 'LATITUDE_Y', 'LONGITUDE_': 'LONGITUDE_', 'POSSUI_GRU': 'POSSUI_GRU', 'SEGMENTO': 'SEGMENTO', 'ID_C': 'ID_C', 'Area(m)': 'Area(m)', 'ID_C2': 'ID_C2', 'Comunidad2': 'Comunidad2', 'DBJSI18': 'DBJSI18', 'DBJSI19': 'DBJSI19', 'DPME07': 'DPME07', 'DPME08': 'DPME08', 'DPME09': 'DPME09', 'DPME10': 'DPME10', 'DPME12': 'DPME12', 'DPME13': 'DPME13', 'DPME14': 'DPME14', 'DPME15': 'DPME15', 'DPME16': 'DPME16', 'DPME17': 'DPME17', 'DPME18': 'DPME18', 'DPME19': 'DPME19', 'DPME20': 'DPME20', 'DPME22': 'DPME22', 'DPME23': 'DPME23', 'DPME24': 'DPME24', 'DPME25': 'DPME25', 'DPME26': 'DPME26', 'DPME35': 'DPME35', 'DPME11': 'DPME11', 'DPME21': 'DPME21', 'DBJSI20': 'DBJSI20', 'DBJSI22': 'DBJSI22', 'DBJSI23': 'DBJSI23', 'DBJSI25': 'DBJSI25', 'DBJSI27': 'DBJSI27', 'DBJSI28': 'DBJSI28', 'DBJSI29': 'DBJSI29', 'DBJSI30': 'DBJSI30', 'DBJSI31': 'DBJSI31', 'DBJSI32': 'DBJSI32', 'DPME02': 'DPME02', 'DPME03': 'DPME03', 'DPME27': 'DPME27', 'DPME28': 'DPME28', 'DPME30': 'DPME30', 'DPME31': 'DPME31', 'DPME33': 'DPME33', 'DPME34': 'DPME34', 'DBJSI01': 'DBJSI01', 'DBJSI21': 'DBJSI21', 'DBJSI24': 'DBJSI24', 'DBJSI26': 'DBJSI26', 'DPME01': 'DPME01', 'DPME29': 'DPME29', 'DPME32': 'DPME32', 'DBJSI11': 'DBJSI11', 'DBJSI12': 'DBJSI12', 'DBJSI14': 'DBJSI14', 'DBJSI15': 'DBJSI15', 'DBJSI16': 'DBJSI16', 'DBJSI17': 'DBJSI17', 'DIFSM01': 'DIFSM01', 'DIFSM02': 'DIFSM02', 'DIFSM04': 'DIFSM04', 'DPME06': 'DPME06', 'DIFSM05': 'DIFSM05', 'DBJSI13': 'DBJSI13', 'DBJSI05': 'DBJSI05', 'DBJSI06': 'DBJSI06', 'DBJSI07': 'DBJSI07', 'DBJSI08': 'DBJSI08', 'DBJSI09': 'DBJSI09', 'DBJSI10': 'DBJSI10', 'DPME04': 'DPME04', 'DPME05': 'DPME05', 'DIFSM03': 'DIFSM03', 'DBJSI02': 'DBJSI02', 'DBJSI03': 'DBJSI03', 'DBJSI04': 'DBJSI04', 'valor_cod': 'valor_cod', 'id3': 'id3', });
+lyr_RIO_PARAOPEBA_R3_2.set('fieldAliases', {'Source': 'Source', 'GEOCODIGO': 'GEOCODIGO', 'MUNICIPIO': 'MUNICIPIO', 'UF': 'UF', 'CD_UF': 'CD_UF', 'HIDRO': 'HIDRO', 'AREA_HA': 'AREA_HA', });
+lyr_pontos_comunidades_3.set('fieldAliases', {'REGIÃO': 'REGIÃO', 'Município': 'Município', 'Comunidade': 'Comunidade', 'LATITUDE_Y': 'LATITUDE_Y', 'LONGITUDE_': 'LONGITUDE_', 'POSSUI_GRU': 'POSSUI_GRU', 'SEGMENTO': 'SEGMENTO', 'ID_C': 'ID_C', });
+lyr_danos_comunidades_somente_ponto_4.set('fieldAliases', {'REGIÃO': 'REGIÃO', 'Município': 'Município', 'Comunidade': 'Comunidade', 'LATITUDE_Y': 'LATITUDE_Y', 'LONGITUDE_': 'LONGITUDE_', 'POSSUI_GRU': 'POSSUI_GRU', 'SEGMENTO': 'SEGMENTO', 'ID_C': 'ID_C', 'DBJSI18': 'DBJSI18', 'DBJSI19': 'DBJSI19', 'DPME07': 'DPME07', 'DPME08': 'DPME08', 'DPME09': 'DPME09', 'DPME10': 'DPME10', 'DPME12': 'DPME12', 'DPME13': 'DPME13', 'DPME14': 'DPME14', 'DPME15': 'DPME15', 'DPME16': 'DPME16', 'DPME17': 'DPME17', 'DPME18': 'DPME18', 'DPME19': 'DPME19', 'DPME20': 'DPME20', 'DPME22': 'DPME22', 'DPME23': 'DPME23', 'DPME24': 'DPME24', 'DPME25': 'DPME25', 'DPME26': 'DPME26', 'DPME35': 'DPME35', 'DPME11': 'DPME11', 'DPME21': 'DPME21', 'DBJSI20': 'DBJSI20', 'DBJSI22': 'DBJSI22', 'DBJSI23': 'DBJSI23', 'DBJSI25': 'DBJSI25', 'DBJSI27': 'DBJSI27', 'DBJSI28': 'DBJSI28', 'DBJSI29': 'DBJSI29', 'DBJSI30': 'DBJSI30', 'DBJSI31': 'DBJSI31', 'DBJSI32': 'DBJSI32', 'DPME02': 'DPME02', 'DPME03': 'DPME03', 'DPME27': 'DPME27', 'DPME28': 'DPME28', 'DPME30': 'DPME30', 'DPME31': 'DPME31', 'DPME33': 'DPME33', 'DPME34': 'DPME34', 'DBJSI01': 'DBJSI01', 'DBJSI21': 'DBJSI21', 'DBJSI24': 'DBJSI24', 'DBJSI26': 'DBJSI26', 'DPME01': 'DPME01', 'DPME29': 'DPME29', 'DPME32': 'DPME32', 'DBJSI11': 'DBJSI11', 'DBJSI12': 'DBJSI12', 'DBJSI14': 'DBJSI14', 'DBJSI15': 'DBJSI15', 'DBJSI16': 'DBJSI16', 'DBJSI17': 'DBJSI17', 'DIFSM01': 'DIFSM01', 'DIFSM02': 'DIFSM02', 'DIFSM04': 'DIFSM04', 'DPME06': 'DPME06', 'DIFSM05': 'DIFSM05', 'DBJSI13': 'DBJSI13', 'DBJSI05': 'DBJSI05', 'DBJSI06': 'DBJSI06', 'DBJSI07': 'DBJSI07', 'DBJSI08': 'DBJSI08', 'DBJSI09': 'DBJSI09', 'DBJSI10': 'DBJSI10', 'DPME04': 'DPME04', 'DPME05': 'DPME05', 'DIFSM03': 'DIFSM03', 'DBJSI02': 'DBJSI02', 'DBJSI03': 'DBJSI03', 'DBJSI04': 'DBJSI04', 'id2': 'id2', });
+lyr_MUNICIPIOS_R3_0.set('fieldImages', {'CD_MUN': 'TextEdit', 'NM_MUN': 'TextEdit', 'CD_RGI': 'TextEdit', 'NM_RGI': 'TextEdit', 'CD_RGINT': 'TextEdit', 'NM_RGINT': 'TextEdit', 'CD_UF': 'TextEdit', 'NM_UF': 'TextEdit', 'SIGLA_UF': 'TextEdit', 'CD_REGIA': 'TextEdit', 'NM_REGIA': 'TextEdit', 'SIGLA_RG': 'TextEdit', 'CD_CONCU': 'TextEdit', 'NM_CONCU': 'TextEdit', 'AREA_KM2': 'TextEdit', });
+lyr_danos_comunidades_poligonos_1.set('fieldImages', {'Nome_da_Co': 'TextEdit', 'REGIÃO': 'TextEdit', 'Município': 'TextEdit', 'Comunidade': 'TextEdit', 'LATITUDE_Y': 'TextEdit', 'LONGITUDE_': 'TextEdit', 'POSSUI_GRU': 'TextEdit', 'SEGMENTO': 'TextEdit', 'ID_C': 'TextEdit', 'Area(m)': 'TextEdit', 'ID_C2': 'TextEdit', 'Comunidad2': 'TextEdit', 'DBJSI18': 'TextEdit', 'DBJSI19': 'TextEdit', 'DPME07': 'TextEdit', 'DPME08': 'TextEdit', 'DPME09': 'TextEdit', 'DPME10': 'TextEdit', 'DPME12': 'TextEdit', 'DPME13': 'TextEdit', 'DPME14': 'TextEdit', 'DPME15': 'TextEdit', 'DPME16': 'TextEdit', 'DPME17': 'TextEdit', 'DPME18': 'TextEdit', 'DPME19': 'TextEdit', 'DPME20': 'TextEdit', 'DPME22': 'TextEdit', 'DPME23': 'TextEdit', 'DPME24': 'TextEdit', 'DPME25': 'TextEdit', 'DPME26': 'TextEdit', 'DPME35': 'TextEdit', 'DPME11': 'TextEdit', 'DPME21': 'TextEdit', 'DBJSI20': 'TextEdit', 'DBJSI22': 'TextEdit', 'DBJSI23': 'TextEdit', 'DBJSI25': 'TextEdit', 'DBJSI27': 'TextEdit', 'DBJSI28': 'TextEdit', 'DBJSI29': 'TextEdit', 'DBJSI30': 'TextEdit', 'DBJSI31': 'TextEdit', 'DBJSI32': 'TextEdit', 'DPME02': 'TextEdit', 'DPME03': 'TextEdit', 'DPME27': 'TextEdit', 'DPME28': 'TextEdit', 'DPME30': 'TextEdit', 'DPME31': 'TextEdit', 'DPME33': 'TextEdit', 'DPME34': 'TextEdit', 'DBJSI01': 'TextEdit', 'DBJSI21': 'TextEdit', 'DBJSI24': 'TextEdit', 'DBJSI26': 'TextEdit', 'DPME01': 'TextEdit', 'DPME29': 'TextEdit', 'DPME32': 'TextEdit', 'DBJSI11': 'TextEdit', 'DBJSI12': 'TextEdit', 'DBJSI14': 'TextEdit', 'DBJSI15': 'TextEdit', 'DBJSI16': 'TextEdit', 'DBJSI17': 'TextEdit', 'DIFSM01': 'TextEdit', 'DIFSM02': 'TextEdit', 'DIFSM04': 'TextEdit', 'DPME06': 'TextEdit', 'DIFSM05': 'TextEdit', 'DBJSI13': 'TextEdit', 'DBJSI05': 'TextEdit', 'DBJSI06': 'TextEdit', 'DBJSI07': 'TextEdit', 'DBJSI08': 'TextEdit', 'DBJSI09': 'TextEdit', 'DBJSI10': 'TextEdit', 'DPME04': 'TextEdit', 'DPME05': 'TextEdit', 'DIFSM03': 'TextEdit', 'DBJSI02': 'TextEdit', 'DBJSI03': 'TextEdit', 'DBJSI04': 'TextEdit', 'valor_cod': 'TextEdit', 'id3': 'TextEdit', });
+lyr_RIO_PARAOPEBA_R3_2.set('fieldImages', {'Source': 'TextEdit', 'GEOCODIGO': 'TextEdit', 'MUNICIPIO': 'TextEdit', 'UF': 'TextEdit', 'CD_UF': 'TextEdit', 'HIDRO': 'TextEdit', 'AREA_HA': 'TextEdit', });
+lyr_pontos_comunidades_3.set('fieldImages', {'REGIÃO': 'TextEdit', 'Município': 'TextEdit', 'Comunidade': 'TextEdit', 'LATITUDE_Y': 'TextEdit', 'LONGITUDE_': 'TextEdit', 'POSSUI_GRU': 'TextEdit', 'SEGMENTO': 'TextEdit', 'ID_C': 'TextEdit', });
+lyr_danos_comunidades_somente_ponto_4.set('fieldImages', {'REGIÃO': 'TextEdit', 'Município': 'TextEdit', 'Comunidade': 'TextEdit', 'LATITUDE_Y': 'TextEdit', 'LONGITUDE_': 'TextEdit', 'POSSUI_GRU': 'TextEdit', 'SEGMENTO': 'TextEdit', 'ID_C': 'TextEdit', 'DBJSI18': 'TextEdit', 'DBJSI19': 'TextEdit', 'DPME07': 'TextEdit', 'DPME08': 'TextEdit', 'DPME09': 'TextEdit', 'DPME10': 'TextEdit', 'DPME12': 'TextEdit', 'DPME13': 'TextEdit', 'DPME14': 'TextEdit', 'DPME15': 'TextEdit', 'DPME16': 'TextEdit', 'DPME17': 'TextEdit', 'DPME18': 'TextEdit', 'DPME19': 'TextEdit', 'DPME20': 'TextEdit', 'DPME22': 'TextEdit', 'DPME23': 'TextEdit', 'DPME24': 'TextEdit', 'DPME25': 'TextEdit', 'DPME26': 'TextEdit', 'DPME35': 'TextEdit', 'DPME11': 'TextEdit', 'DPME21': 'TextEdit', 'DBJSI20': 'TextEdit', 'DBJSI22': 'TextEdit', 'DBJSI23': 'TextEdit', 'DBJSI25': 'TextEdit', 'DBJSI27': 'TextEdit', 'DBJSI28': 'TextEdit', 'DBJSI29': 'TextEdit', 'DBJSI30': 'TextEdit', 'DBJSI31': 'TextEdit', 'DBJSI32': 'TextEdit', 'DPME02': 'TextEdit', 'DPME03': 'TextEdit', 'DPME27': 'TextEdit', 'DPME28': 'TextEdit', 'DPME30': 'TextEdit', 'DPME31': 'TextEdit', 'DPME33': 'TextEdit', 'DPME34': 'TextEdit', 'DBJSI01': 'TextEdit', 'DBJSI21': 'TextEdit', 'DBJSI24': 'TextEdit', 'DBJSI26': 'TextEdit', 'DPME01': 'TextEdit', 'DPME29': 'TextEdit', 'DPME32': 'TextEdit', 'DBJSI11': 'TextEdit', 'DBJSI12': 'TextEdit', 'DBJSI14': 'TextEdit', 'DBJSI15': 'TextEdit', 'DBJSI16': 'TextEdit', 'DBJSI17': 'TextEdit', 'DIFSM01': 'TextEdit', 'DIFSM02': 'TextEdit', 'DIFSM04': 'TextEdit', 'DPME06': 'TextEdit', 'DIFSM05': 'TextEdit', 'DBJSI13': 'TextEdit', 'DBJSI05': 'TextEdit', 'DBJSI06': 'TextEdit', 'DBJSI07': 'TextEdit', 'DBJSI08': 'TextEdit', 'DBJSI09': 'TextEdit', 'DBJSI10': 'TextEdit', 'DPME04': 'TextEdit', 'DPME05': 'TextEdit', 'DIFSM03': 'TextEdit', 'DBJSI02': 'TextEdit', 'DBJSI03': 'TextEdit', 'DBJSI04': 'TextEdit', 'id2': 'TextEdit', });
+lyr_MUNICIPIOS_R3_0.set('fieldLabels', {'CD_MUN': 'hidden field', 'NM_MUN': 'no label', 'CD_RGI': 'hidden field', 'NM_RGI': 'hidden field', 'CD_RGINT': 'hidden field', 'NM_RGINT': 'hidden field', 'CD_UF': 'hidden field', 'NM_UF': 'hidden field', 'SIGLA_UF': 'hidden field', 'CD_REGIA': 'hidden field', 'NM_REGIA': 'hidden field', 'SIGLA_RG': 'hidden field', 'CD_CONCU': 'hidden field', 'NM_CONCU': 'hidden field', 'AREA_KM2': 'hidden field', });
+lyr_danos_comunidades_poligonos_1.set('fieldLabels', {'Nome_da_Co': 'hidden field', 'REGIÃO': 'inline label - visible with data', 'Município': 'inline label - visible with data', 'Comunidade': 'header label - visible with data', 'LATITUDE_Y': 'hidden field', 'LONGITUDE_': 'hidden field', 'POSSUI_GRU': 'hidden field', 'SEGMENTO': 'inline label - visible with data', 'ID_C': 'hidden field', 'Area(m)': 'inline label - visible with data', 'ID_C2': 'hidden field', 'Comunidad2': 'hidden field', 'DBJSI18': 'hidden field', 'DBJSI19': 'hidden field', 'DPME07': 'hidden field', 'DPME08': 'hidden field', 'DPME09': 'hidden field', 'DPME10': 'hidden field', 'DPME12': 'hidden field', 'DPME13': 'hidden field', 'DPME14': 'hidden field', 'DPME15': 'hidden field', 'DPME16': 'hidden field', 'DPME17': 'hidden field', 'DPME18': 'hidden field', 'DPME19': 'hidden field', 'DPME20': 'hidden field', 'DPME22': 'hidden field', 'DPME23': 'hidden field', 'DPME24': 'hidden field', 'DPME25': 'hidden field', 'DPME26': 'hidden field', 'DPME35': 'hidden field', 'DPME11': 'hidden field', 'DPME21': 'hidden field', 'DBJSI20': 'hidden field', 'DBJSI22': 'hidden field', 'DBJSI23': 'hidden field', 'DBJSI25': 'hidden field', 'DBJSI27': 'hidden field', 'DBJSI28': 'hidden field', 'DBJSI29': 'hidden field', 'DBJSI30': 'hidden field', 'DBJSI31': 'hidden field', 'DBJSI32': 'hidden field', 'DPME02': 'hidden field', 'DPME03': 'hidden field', 'DPME27': 'hidden field', 'DPME28': 'hidden field', 'DPME30': 'hidden field', 'DPME31': 'hidden field', 'DPME33': 'hidden field', 'DPME34': 'hidden field', 'DBJSI01': 'hidden field', 'DBJSI21': 'hidden field', 'DBJSI24': 'hidden field', 'DBJSI26': 'hidden field', 'DPME01': 'hidden field', 'DPME29': 'hidden field', 'DPME32': 'hidden field', 'DBJSI11': 'hidden field', 'DBJSI12': 'hidden field', 'DBJSI14': 'hidden field', 'DBJSI15': 'hidden field', 'DBJSI16': 'hidden field', 'DBJSI17': 'hidden field', 'DIFSM01': 'hidden field', 'DIFSM02': 'hidden field', 'DIFSM04': 'hidden field', 'DPME06': 'hidden field', 'DIFSM05': 'hidden field', 'DBJSI13': 'hidden field', 'DBJSI05': 'hidden field', 'DBJSI06': 'hidden field', 'DBJSI07': 'hidden field', 'DBJSI08': 'hidden field', 'DBJSI09': 'hidden field', 'DBJSI10': 'hidden field', 'DPME04': 'hidden field', 'DPME05': 'hidden field', 'DIFSM03': 'hidden field', 'DBJSI02': 'hidden field', 'DBJSI03': 'hidden field', 'DBJSI04': 'hidden field', 'valor_cod': 'hidden field', 'id3': 'hidden field', });
+lyr_RIO_PARAOPEBA_R3_2.set('fieldLabels', {'Source': 'hidden field', 'GEOCODIGO': 'hidden field', 'MUNICIPIO': 'hidden field', 'UF': 'hidden field', 'CD_UF': 'hidden field', 'HIDRO': 'hidden field', 'AREA_HA': 'hidden field', });
+lyr_pontos_comunidades_3.set('fieldLabels', {'REGIÃO': 'hidden field', 'Município': 'hidden field', 'Comunidade': 'hidden field', 'LATITUDE_Y': 'hidden field', 'LONGITUDE_': 'hidden field', 'POSSUI_GRU': 'hidden field', 'SEGMENTO': 'hidden field', 'ID_C': 'hidden field', });
+lyr_danos_comunidades_somente_ponto_4.set('fieldLabels', {'REGIÃO': 'hidden field', 'Município': 'inline label - visible with data', 'Comunidade': 'header label - visible with data', 'LATITUDE_Y': 'hidden field', 'LONGITUDE_': 'hidden field', 'POSSUI_GRU': 'hidden field', 'SEGMENTO': 'inline label - visible with data', 'ID_C': 'hidden field', 'DBJSI18': 'hidden field', 'DBJSI19': 'hidden field', 'DPME07': 'hidden field', 'DPME08': 'hidden field', 'DPME09': 'hidden field', 'DPME10': 'hidden field', 'DPME12': 'hidden field', 'DPME13': 'hidden field', 'DPME14': 'hidden field', 'DPME15': 'hidden field', 'DPME16': 'hidden field', 'DPME17': 'hidden field', 'DPME18': 'hidden field', 'DPME19': 'hidden field', 'DPME20': 'hidden field', 'DPME22': 'hidden field', 'DPME23': 'hidden field', 'DPME24': 'hidden field', 'DPME25': 'hidden field', 'DPME26': 'hidden field', 'DPME35': 'hidden field', 'DPME11': 'hidden field', 'DPME21': 'hidden field', 'DBJSI20': 'hidden field', 'DBJSI22': 'hidden field', 'DBJSI23': 'hidden field', 'DBJSI25': 'hidden field', 'DBJSI27': 'hidden field', 'DBJSI28': 'hidden field', 'DBJSI29': 'hidden field', 'DBJSI30': 'hidden field', 'DBJSI31': 'hidden field', 'DBJSI32': 'hidden field', 'DPME02': 'hidden field', 'DPME03': 'hidden field', 'DPME27': 'hidden field', 'DPME28': 'hidden field', 'DPME30': 'hidden field', 'DPME31': 'hidden field', 'DPME33': 'hidden field', 'DPME34': 'hidden field', 'DBJSI01': 'hidden field', 'DBJSI21': 'hidden field', 'DBJSI24': 'hidden field', 'DBJSI26': 'hidden field', 'DPME01': 'hidden field', 'DPME29': 'hidden field', 'DPME32': 'hidden field', 'DBJSI11': 'hidden field', 'DBJSI12': 'hidden field', 'DBJSI14': 'hidden field', 'DBJSI15': 'hidden field', 'DBJSI16': 'hidden field', 'DBJSI17': 'hidden field', 'DIFSM01': 'hidden field', 'DIFSM02': 'hidden field', 'DIFSM04': 'hidden field', 'DPME06': 'hidden field', 'DIFSM05': 'hidden field', 'DBJSI13': 'hidden field', 'DBJSI05': 'hidden field', 'DBJSI06': 'hidden field', 'DBJSI07': 'hidden field', 'DBJSI08': 'hidden field', 'DBJSI09': 'hidden field', 'DBJSI10': 'hidden field', 'DPME04': 'hidden field', 'DPME05': 'hidden field', 'DIFSM03': 'hidden field', 'DBJSI02': 'hidden field', 'DBJSI03': 'hidden field', 'DBJSI04': 'hidden field', 'id2': 'hidden field', });
+lyr_danos_comunidades_somente_ponto_4.on('precompose', function(evt) {
+    evt.context.globalCompositeOperation = 'normal';
+});
