@@ -1,0 +1,1 @@
+# Diagn-stico-de-Danos-Coletivos-R3
